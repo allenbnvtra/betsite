@@ -7,9 +7,12 @@ import { IoMdNotificationsOutline } from 'react-icons/io';
 import { MdOutlinePersonAddAlt } from 'react-icons/md';
 import { IoPersonCircleSharp } from 'react-icons/io5';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { LuWallet } from 'react-icons/lu';
 import AddPlayerModal from '../Modal/AddPlayerModal';
 import TransferPoints from '../Modal/TransferPoints';
 import NotificationDropdown from './NotificationDropdown';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const [isAddPersonModalOpen, setIsAddPersonModalOpen] = useState(false);
@@ -36,10 +39,13 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-[1000] bg-[#1c3153]">
       <div className="flex w-full items-center justify-between p-4 text-white">
-        <h1 className="text-xl font-semibold">Dashboard</h1>
+        <h1 className="hidden text-xl font-semibold sm:block">Dashboard</h1>
+        <Link className="sm:hidden" href="/overview">
+          <Image src="/images/king.png" height={42} width={42} alt="" />
+        </Link>
 
-        <div className="hidden items-center gap-4 xs:flex">
-          <div className="flex items-center gap-5 text-2xl">
+        <div className="flex items-center gap-4">
+          <div className="hidden items-center gap-5 text-2xl sm:flex">
             <MdOutlinePersonAddAlt
               className="cursor-pointer"
               onClick={toggleAddPersonModal}
@@ -78,6 +84,10 @@ const Header = () => {
                 <p className="p-2">Logout</p>
               </div>
             )}
+          </div>
+
+          <div className="cursor-pointer text-xl sm:hidden">
+            <LuWallet />
           </div>
         </div>
       </div>

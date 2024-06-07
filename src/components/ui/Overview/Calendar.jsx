@@ -60,7 +60,7 @@ const Calendar = () => {
           value={startDate}
           onChange={handleStartDateChange}
           placeholder="Start Date"
-          className="rounded-full border border-slate-300 px-2 py-1 text-xs"
+          className="rounded-full border border-slate-300 px-2 py-1 text-sm"
         />
         <span className="text-slate-500">to</span>
         <input
@@ -70,7 +70,7 @@ const Calendar = () => {
           value={endDate}
           onChange={handleEndDateChange}
           placeholder="End Date"
-          className="rounded-full border border-slate-300 px-2 py-1 text-xs"
+          className="rounded-full border border-slate-300 px-2 py-1 text-sm"
         />
       </div>
     </div>

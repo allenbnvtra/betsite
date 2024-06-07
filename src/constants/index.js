@@ -2,6 +2,7 @@ import { TbLayoutDashboard } from 'react-icons/tb';
 import { BsPeople } from 'react-icons/bs';
 import { HiOutlineDocumentReport } from 'react-icons/hi';
 import { GrTree } from 'react-icons/gr';
+import { IoMdNotificationsOutline } from 'react-icons/io';
 
 export const sidebarLinks = [
   {
@@ -27,6 +28,57 @@ export const sidebarLinks = [
         route: '/players/blocked',
       },
     ],
+  },
+  {
+    icon: <HiOutlineDocumentReport />,
+    label: 'Reports',
+    sublinks: [
+      {
+        label: 'General',
+        route: '/reports/',
+      },
+      {
+        label: 'Transactions',
+        route: '/reports/transactions',
+      },
+      {
+        label: 'Bets',
+        route: '/reports/bets',
+      },
+    ],
+  },
+];
+
+export const mobileNav = [
+  {
+    icon: <TbLayoutDashboard />,
+    label: 'Overview',
+    route: '/overview',
+  },
+  {
+    icon: <GrTree />,
+    label: 'Agent Tree',
+    route: '/agent-tree',
+  },
+  {
+    icon: <BsPeople />,
+    label: 'Players',
+    sublinks: [
+      {
+        label: 'Active Players',
+        route: '/players/active',
+      },
+      {
+        label: 'Blocked Players',
+        route: '/players/blocked',
+      },
+    ],
+  },
+  {
+    icon: <IoMdNotificationsOutline />,
+    label: 'Notification',
+    route: '/notification',
+    notificationCount: 5,
   },
   {
     icon: <HiOutlineDocumentReport />,
