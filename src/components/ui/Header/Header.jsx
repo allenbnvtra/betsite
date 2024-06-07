@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-[1000] bg-[#1c3153]">
-      <div className="flex w-full items-center justify-between px-4 py-1 text-white sm:p-4">
+      <div className="flex w-full items-center justify-between px-4 py-3 text-white sm:p-4">
         <h1 className="hidden text-xl font-semibold sm:block">Dashboard</h1>
         <Link className="sm:hidden" href="/overview">
           <Image src="/images/king.png" height={42} width={42} alt="" />
