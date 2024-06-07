@@ -1,12 +1,12 @@
-import React from "react";
-import Box from "./Box";
-import { BsPeople } from "react-icons/bs";
-import { LuTimerReset } from "react-icons/lu";
-import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import React from 'react';
+import Box from './Box';
+import { BsPeople } from 'react-icons/bs';
+import { LuTimerReset } from 'react-icons/lu';
+import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 
 const Summary = () => {
   return (
-    <div className="flex gap-2">
+    <div className="grid-col-1 grid gap-3 sm:grid-cols-3">
       <Box
         icon={<BsPeople />}
         title="Total Player/s"

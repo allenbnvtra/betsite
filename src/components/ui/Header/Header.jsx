@@ -1,14 +1,15 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { IoMailSharp } from "react-icons/io5";
-import { BiTransferAlt } from "react-icons/bi";
-import { IoMdNotificationsOutline } from "react-icons/io";
-import { MdOutlinePersonAddAlt } from "react-icons/md";
-import { IoPersonCircleSharp } from "react-icons/io5";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import AddPlayerModal from "../Modal/AddPlayerModal";
-import TransferPoints from "../Modal/TransferPoints";
+import { useState } from 'react';
+import { IoMailSharp } from 'react-icons/io5';
+import { BiTransferAlt } from 'react-icons/bi';
+import { IoMdNotificationsOutline } from 'react-icons/io';
+import { MdOutlinePersonAddAlt } from 'react-icons/md';
+import { IoPersonCircleSharp } from 'react-icons/io5';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import AddPlayerModal from '../Modal/AddPlayerModal';
+import TransferPoints from '../Modal/TransferPoints';
+import NotificationDropdown from './NotificationDropdown';
 
 const Header = () => {
   const [isAddPersonModalOpen, setIsAddPersonModalOpen] = useState(false);
@@ -33,11 +34,11 @@ const Header = () => {
   const notificationCount = 5;
 
   return (
-    <header className="sticky top-0 bg-[#1c3153]">
+    <header className="sticky top-0 z-[1000] bg-[#1c3153]">
       <div className="flex w-full items-center justify-between p-4 text-white">
         <h1 className="text-xl font-semibold">Dashboard</h1>
 
-        <div className="flex items-center gap-4">
+        <div className="hidden items-center gap-4 xs:flex">
           <div className="flex items-center gap-5 text-2xl">
             <MdOutlinePersonAddAlt
               className="cursor-pointer"
@@ -58,11 +59,7 @@ const Header = () => {
                   {notificationCount}
                 </div>
               )}
-              {isNotificationDropdownOpen && (
-                <div className="absolute right-2 mt-2 w-48 rounded bg-white text-black shadow-lg">
-                  <p className="p-2">No new notifications</p>
-                </div>
-              )}
+              {isNotificationDropdownOpen && <NotificationDropdown />}
             </div>
           </div>
 

@@ -1,14 +1,14 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Minibets",
+  title: 'Minibets',
   description:
-    "Get exciting bonuses and best odds. Number 1 casino in The Philippines. We offer live casino, sports betting, slots and many more.",
+    'Minibets is an online platform where you can play casino games, sports bettings, slots, and many more. We offer a high quality service for Online Casino Players in The Philippines',
   icons: {
-    icon: "/images/king.png",
+    icon: '/images/king.png',
   },
 };
 

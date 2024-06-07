@@ -1,40 +1,58 @@
-import { useState, useEffect } from "react";
-import { format, startOfMonth, endOfMonth } from "date-fns";
+import { useState, useEffect } from 'react';
+import { format, endOfMonth } from 'date-fns';
 
 const Calendar = () => {
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
   useEffect(() => {
-    const today = new Date();
-    const day = today.getDate();
+    const cachedStartDate = localStorage.getItem('startDate');
+    const cachedEndDate = localStorage.getItem('endDate');
 
-    let start, end;
-
-    if (day <= 15) {
-      start = new Date(today.getFullYear(), today.getMonth(), 1);
-      end = new Date(today.getFullYear(), today.getMonth(), 15);
+    if (cachedStartDate && cachedEndDate) {
+      setStartDate(cachedStartDate);
+      setEndDate(cachedEndDate);
     } else {
-      start = new Date(today.getFullYear(), today.getMonth(), 16);
-      end = endOfMonth(today);
-    }
+      const today = new Date();
+      const day = today.getDate();
 
-    setStartDate(format(start, "yyyy-MM-dd"));
-    setEndDate(format(end, "yyyy-MM-dd"));
+      let start, end;
+
+      if (day <= 15) {
+        start = new Date(today.getFullYear(), today.getMonth(), 1);
+        end = new Date(today.getFullYear(), today.getMonth(), 15);
+      } else {
+        start = new Date(today.getFullYear(), today.getMonth(), 16);
+        end = endOfMonth(today);
+      }
+
+      const formattedStartDate = format(start, 'yyyy-MM-dd');
+      const formattedEndDate = format(end, 'yyyy-MM-dd');
+
+      setStartDate(formattedStartDate);
+      setEndDate(formattedEndDate);
+
+      localStorage.setItem('startDate', formattedStartDate);
+      localStorage.setItem('endDate', formattedEndDate);
+    }
   }, []);
 
   const handleStartDateChange = (e) => {
-    setStartDate(e.target.value);
+    const newStartDate = e.target.value;
+    setStartDate(newStartDate);
+    localStorage.setItem('startDate', newStartDate);
   };
 
   const handleEndDateChange = (e) => {
-    setEndDate(e.target.value);
+    const newEndDate = e.target.value;
+    setEndDate(newEndDate);
+    localStorage.setItem('endDate', newEndDate);
   };
 
   return (
-    <div className="flex items-center justify-between text-sm text-slate-700">
+    <div className="flex flex-col items-center justify-between text-sm text-slate-700 xs:flex-row">
       <p className="font-medium">Total Summary</p>
-      <div className="flex items-center space-x-2">
+      <div className="my-4 flex items-center space-x-1 xs:my-0">
         <input
           type="date"
           name="start-date"
@@ -42,7 +60,7 @@ const Calendar = () => {
           value={startDate}
           onChange={handleStartDateChange}
           placeholder="Start Date"
-          className="rounded-full border border-slate-300 px-2 py-1"
+          className="rounded-full border border-slate-300 px-2 py-1 text-xs"
         />
         <span className="text-slate-500">to</span>
         <input
@@ -52,7 +70,7 @@ const Calendar = () => {
           value={endDate}
           onChange={handleEndDateChange}
           placeholder="End Date"
-          className="rounded-full border border-slate-300 px-2 py-1"
+          className="rounded-full border border-slate-300 px-2 py-1 text-xs"
         />
       </div>
     </div>

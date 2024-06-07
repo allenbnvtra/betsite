@@ -1,5 +1,5 @@
-import Header from "@/components/ui/Header/Header";
-import Sidebar from "@/components/ui/Sidebar/Sidebar";
+import Header from '@/components/ui/Header/Header';
+import Sidebar from '@/components/ui/Sidebar/Sidebar';
 
 export default function RootLayout({ children }) {
   return (
@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
       <Sidebar />
       <section className="w-full">
         <Header />
-        <div className="px-4 pt-6">{children}</div>
+        <div className="p-5">{children}</div>
       </section>
     </main>
   );
