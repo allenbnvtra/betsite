@@ -39,7 +39,7 @@ const Computed = () => {
   };
 
   return (
-    <div className="z-0 mb-3 mt-2 flex w-full flex-col justify-center gap-7">
+    <div className="z-0 mb-3 mt-2 flex w-full flex-col justify-center gap-7 pb-3">
       {isMobile ? (
         <Slider {...settings}>
           {totalSummary.map(({ category, items }) => (
