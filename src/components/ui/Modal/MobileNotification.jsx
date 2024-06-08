@@ -6,18 +6,21 @@ const MobileNotification = ({ isNotificationOpen, handleClose }) => {
   useEffect(() => {
     if (isNotificationOpen) {
       setVisible(true);
-      document.body.classList.add('overflow-hidden'); // Disable background scroll
+      document.body.classList.add('overflow-hidden');
     } else {
       setTimeout(() => setVisible(false), 300);
-      document.body.classList.remove('overflow-hidden'); // Enable background scroll
+      document.body.classList.remove('overflow-hidden');
     }
   }, [isNotificationOpen]);
+
+  console.log(visible);
 
   const handleOuterClick = (e) => {
     if (e.target === e.currentTarget) {
       handleClose();
     }
   };
+
   return (
     <div
       onClick={handleOuterClick}

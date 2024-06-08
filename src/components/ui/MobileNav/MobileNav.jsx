@@ -21,6 +21,12 @@ const MobileNav = () => {
     }
   };
 
+  const handleClose = () => {
+    setIsPlayerModalOpen(false);
+    setIsNotificationModalOpen(false);
+    setIsReportModalOpen(false);
+  };
+
   return (
     <div className="sticky bottom-0 left-0 right-0 border-t-2 bg-white shadow-md md:hidden">
       <nav>
@@ -56,24 +62,18 @@ const MobileNav = () => {
           ))}
         </div>
       </nav>
-      {isNotificationModalOpen && (
-        <MobileNotification
-          handleClose={() => setIsNotificationModalOpen(false)}
-          isNotificationOpen={isNotificationModalOpen}
-        />
-      )}
-      {isPlayerModalOpen && (
-        <MobilePlayer
-          handleClose={() => setIsPlayerModalOpen(false)}
-          isPlayerOpen={isPlayerModalOpen}
-        />
-      )}
-      {isReportModalOpen && (
-        <MobileReport
-          handleClose={() => setIsReportModalOpen(false)}
-          isReportOpen={isReportModalOpen}
-        />
-      )}
+      <MobileNotification
+        handleClose={handleClose}
+        isNotificationOpen={isNotificationModalOpen}
+      />
+      <MobilePlayer
+        handleClose={handleClose}
+        isPlayerOpen={isPlayerModalOpen}
+      />
+      <MobileReport
+        handleClose={handleClose}
+        isReportOpen={isReportModalOpen}
+      />
     </div>
   );
 };
