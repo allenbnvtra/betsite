@@ -7,12 +7,12 @@ import { IoMdNotificationsOutline } from 'react-icons/io';
 import { MdOutlinePersonAddAlt } from 'react-icons/md';
 import { IoPersonCircleSharp } from 'react-icons/io5';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
-import { LuWallet } from 'react-icons/lu';
 import AddPlayerModal from '../Modal/AddPlayerModal';
 import TransferPoints from '../Modal/TransferPoints';
 import NotificationDropdown from './NotificationDropdown';
 import Image from 'next/image';
 import Link from 'next/link';
+import Wallet from './Wallet';
 
 const Header = () => {
   const [isAddPersonModalOpen, setIsAddPersonModalOpen] = useState(false);
@@ -86,9 +86,7 @@ const Header = () => {
             )}
           </div>
 
-          <div className="cursor-pointer text-xl sm:hidden">
-            <LuWallet />
-          </div>
+          <Wallet />
         </div>
       </div>
 

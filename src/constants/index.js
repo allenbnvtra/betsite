@@ -153,3 +153,18 @@ export const totalSummary = [
     ],
   },
 ];
+
+export const walletBalance = [
+  {
+    label: 'Credit',
+    amount: '₱0',
+  },
+  {
+    label: 'Balance',
+    amount: '₱19,980.00',
+  },
+  {
+    label: 'Total Amount',
+    amount: '₱19,980.00',
+  },
+];

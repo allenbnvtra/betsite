@@ -52,7 +52,7 @@ const Calendar = () => {
   return (
     <div className="flex flex-col items-center justify-between text-sm text-slate-700 xs:flex-row">
       <p className="font-medium">Total Summary</p>
-      <div className="my-4 flex items-center space-x-1 xs:my-0">
+      <div className="my-4 flex items-center space-x-2 xs:my-0">
         <input
           type="date"
           name="start-date"
