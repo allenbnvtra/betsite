@@ -77,8 +77,7 @@ export const mobileNav = [
   {
     icon: <IoMdNotificationsOutline />,
     label: 'Notification',
-    route: '/notification',
-    notificationCount: 5,
+    notificationCount: 0,
   },
   {
     icon: <HiOutlineDocumentReport />,

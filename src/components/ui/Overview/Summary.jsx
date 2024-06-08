@@ -25,6 +25,16 @@ const Summary = () => {
 
   return (
     <div>
+      {isMobile && (
+        <div className="mb-2 mt-[-1rem] flex justify-end">
+          <button
+            className="mb-3 text-end text-sm text-slate-800 underline"
+            onClick={handleToggle}
+          >
+            {showAll ? 'Show Less' : 'See All'}
+          </button>
+        </div>
+      )}
       <div className="grid-col-1 grid gap-3 sm:grid-cols-3">
         <Box
           icon={<BsPeople />}
@@ -68,16 +78,6 @@ const Summary = () => {
           </>
         )}
       </div>
-      {isMobile && (
-        <div className="mt-2 flex justify-center">
-          <button
-            className="mb-3 text-end text-sm text-slate-800 underline"
-            onClick={handleToggle}
-          >
-            {showAll ? 'Show Less' : 'See All'}
-          </button>
-        </div>
-      )}
     </div>
   );
 };
