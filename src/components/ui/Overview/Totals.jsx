@@ -1,6 +1,5 @@
-"use client";
-import Calendar from "./Calendar";
-import Computed from "./Computed";
+import Calendar from './Calendar';
+import Computed from './Computed';
 
 const Totals = () => {
   return (

@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState, useEffect } from 'react';
 import Box from './Box';
 import { BsPeople } from 'react-icons/bs';

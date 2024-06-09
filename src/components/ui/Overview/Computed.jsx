@@ -1,3 +1,5 @@
+'use client';
+
 import { totalSummary } from '@/constants';
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';

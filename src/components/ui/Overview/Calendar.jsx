@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { format, endOfMonth } from 'date-fns';
 

@@ -13,8 +13,6 @@ const MobileNotification = ({ isNotificationOpen, handleClose }) => {
     }
   }, [isNotificationOpen]);
 
-  console.log(visible);
-
   const handleOuterClick = (e) => {
     if (e.target === e.currentTarget) {
       handleClose();
