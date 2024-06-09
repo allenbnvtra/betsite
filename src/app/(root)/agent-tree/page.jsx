@@ -1,12 +1,12 @@
-import PagesTitle from "@/components/PagesTitle";
-import React from "react";
+import AgentTree from '@/components/ui/AgentTree/AgentTree';
+import React from 'react';
 
-const AgentTree = () => {
+const AgentTreePage = () => {
   return (
     <div>
-      <PagesTitle title="Agent Tree" />
+      <AgentTree />
     </div>
   );
 };
 
-export default AgentTree;
+export default AgentTreePage;
