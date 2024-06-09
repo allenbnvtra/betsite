@@ -21,7 +21,7 @@ export const sidebarLinks = [
     sublinks: [
       {
         label: 'Active Players',
-        route: '/players/active',
+        route: '/players',
       },
       {
         label: 'Blocked Players',
@@ -66,7 +66,7 @@ export const mobileNav = [
     sublinks: [
       {
         label: 'Active Players',
-        route: '/players/active',
+        route: '/players',
       },
       {
         label: 'Blocked Players',

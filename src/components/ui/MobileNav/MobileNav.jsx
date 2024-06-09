@@ -1,30 +1,34 @@
 'use client';
 import React, { useState } from 'react';
-import { mobileNav } from '@/constants';
 import Link from 'next/link';
+import { mobileNav } from '@/constants';
+import MobileModal from '../Modal/MobileModal';
 import MobileNotification from '../Modal/MobileNotification';
-import MobilePlayer from '../Modal/MobilePlayer';
-import MobileReport from '../Modal/MobileReport';
 
 const MobileNav = () => {
-  const [isPlayerModalOpen, setIsPlayerModalOpen] = useState(false);
-  const [isNotificationModalOpen, setIsNotificationModalOpen] = useState(false);
-  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(null);
 
   const handleOpenModal = (label) => {
-    if (label === 'Players') {
-      setIsPlayerModalOpen(true);
-    } else if (label === 'Notification') {
-      setIsNotificationModalOpen(true);
-    } else if (label === 'Reports') {
-      setIsReportModalOpen(true);
-    }
+    setOpenModal(label);
   };
 
   const handleClose = () => {
-    setIsPlayerModalOpen(false);
-    setIsNotificationModalOpen(false);
-    setIsReportModalOpen(false);
+    setOpenModal(null);
+  };
+
+  const renderSublinks = (label) => {
+    const navItem = mobileNav.find((item) => item.label === label);
+    return navItem && navItem.sublinks ? (
+      <ul>
+        {navItem.sublinks.map((sublink, index) => (
+          <li key={index}>
+            <Link onClick={handleClose} href={sublink.route}>
+              <p className="px-4 py-4 hover:bg-slate-200">{sublink.label}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    ) : null;
   };
 
   return (
@@ -62,18 +66,26 @@ const MobileNav = () => {
           ))}
         </div>
       </nav>
+      <MobileModal
+        isOpen={openModal === 'Players'}
+        handleClose={handleClose}
+        title="Players"
+      >
+        {renderSublinks('Players')}
+      </MobileModal>
+
       <MobileNotification
+        isNotificationOpen={openModal === 'Notification'}
         handleClose={handleClose}
-        isNotificationOpen={isNotificationModalOpen}
       />
-      <MobilePlayer
+
+      <MobileModal
+        isOpen={openModal === 'Reports'}
         handleClose={handleClose}
-        isPlayerOpen={isPlayerModalOpen}
-      />
-      <MobileReport
-        handleClose={handleClose}
-        isReportOpen={isReportModalOpen}
-      />
+        title="Reports"
+      >
+        {renderSublinks('Reports')}
+      </MobileModal>
     </div>
   );
 };
