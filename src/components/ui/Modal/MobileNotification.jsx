@@ -30,14 +30,14 @@ const MobileNotification = ({ isNotificationOpen, handleClose }) => {
     >
       {visible && (
         <div
-          className={`z-[1000] h-[30rem] w-full transform rounded-tl-2xl rounded-tr-2xl bg-white pt-1 text-slate-700 transition-transform duration-300 ${
+          className={`z-[1000] h-[30rem] w-full transform rounded-tl-2xl rounded-tr-2xl bg-white pt-1 text-sm text-slate-700 transition-transform duration-300 ${
             isNotificationOpen ? 'translate-y-0' : 'translate-y-full'
           }`}
         >
-          <div className="flex items-center justify-between border-b px-4 py-4">
-            <p className="text-meduim font-semibold">Notification</p>
+          <div className="flex items-center justify-between border-b px-4 py-3">
+            <p className="font-semibold">Notification</p>
             <IoIosClose
-              className="cursor-pointer text-3xl"
+              className="cursor-pointer text-2xl"
               onClick={handleClose}
             />
           </div>

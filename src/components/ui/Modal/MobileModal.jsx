@@ -33,10 +33,10 @@ const MobileModal = ({ isOpen, handleClose, title, children }) => {
             isOpen ? 'translate-y-0' : 'translate-y-full'
           }`}
         >
-          <div className="flex items-center justify-between border-b px-4 py-4">
-            <p className="text-medium font-semibold">{title}</p>
+          <div className="flex items-center justify-between border-b px-4 py-3 text-sm">
+            <p className="font-semibold">{title}</p>
             <IoIosClose
-              className="cursor-pointer text-3xl"
+              className="cursor-pointer text-2xl"
               onClick={handleClose}
             />
           </div>

@@ -75,7 +75,7 @@ const Header = () => {
           >
             <div className="flex items-center gap-1">
               <IoPersonCircleSharp className="text-2xl" />
-              <p className="text-sm">allenbnvtra</p>
+              <p className="text-xs">allenbnvtra</p>
             </div>
             <MdOutlineKeyboardArrowDown />
             {isUserDropdownOpen && (

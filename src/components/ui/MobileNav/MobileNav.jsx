@@ -23,7 +23,9 @@ const MobileNav = () => {
         {navItem.sublinks.map((sublink, index) => (
           <li key={index}>
             <Link onClick={handleClose} href={sublink.route}>
-              <p className="px-4 py-4 hover:bg-slate-200">{sublink.label}</p>
+              <p className="px-4 py-4 text-sm hover:bg-slate-200">
+                {sublink.label}
+              </p>
             </Link>
           </li>
         ))}
